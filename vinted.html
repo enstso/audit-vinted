@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audit Conception Responsable - Vinted</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="bg-white shadow p-6 sticky top-0 z-10">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-indigo-600">
+          Audit Numérique Responsable – Vinted
+        </h1>
+        <span class="text-sm text-gray-500">Juin 2025</span>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-8 space-y-10">
+      <section>
+        <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+          1. Introduction
+        </h2>
+        <p class="leading-relaxed text-justify">
+          Dans une ère marquée par les préoccupations écologiques et sociétales,
+          la sobriété numérique devient un impératif pour les plateformes en
+          ligne. Cet audit se concentre sur Vinted, un acteur majeur du marché
+          de la seconde main, et plus précisément sur son unité fonctionnelle
+          clé : <strong>la mise en vente d'un article</strong>. Nous avons
+          évalué le service sous les prismes de l’écoconception, de
+          l’accessibilité et de la contribution aux Objectifs de Développement
+          Durable (ODD).
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+          2. Présentation du service
+        </h2>
+        <p class="leading-relaxed text-justify">
+          Vinted est une plateforme communautaire qui permet à ses utilisateurs
+          d'acheter, vendre ou échanger des vêtements et accessoires de seconde
+          main. Son interface simple et intuitive favorise une expérience
+          utilisateur efficace centrée sur la rapidité de mise en ligne d’un
+          article.
+        </p>
+        <ul class="list-disc list-inside mt-4 space-y-1">
+          <li>📸 Téléversement facile des photos</li>
+          <li>✏️ Formulaire de description intuitif</li>
+          <li>💰 Tarification libre</li>
+          <li>📦 Expéditions facilitées avec partenaires logistiques</li>
+        </ul>
+        <p class="mt-4">
+          Vinted s’aligne sur plusieurs ODD, notamment :
+          <strong>ODD 12 (Consommation responsable)</strong> et
+          <strong>ODD 13 (Action climatique)</strong>, en allongeant le cycle de
+          vie des vêtements et réduisant la production textile.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+          3. Audit Technique
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-2xl shadow">
+            <h3 class="text-lg font-bold mb-2">♻️ Écoconception</h3>
+            <ul class="list-disc list-inside text-sm">
+              <li>Poids moyen d’une page : 6.977 Mo</li>
+              <li>DOM : ~3900 éléments</li>
+              <li>
+                Note EcoIndex :
+                <span class="text-red-600 font-semibold">G</span>
+              </li>
+              <li>Images non compressées</li>
+              <li>Scripts JS superflus</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow">
+            <h3 class="text-lg font-bold mb-2">🔎 Accessibilité</h3>
+            <ul class="list-disc list-inside text-sm">
+              <li>Score Lighthouse : 63%</li>
+              <li>Réduire le travail du main thread</li>
+              <li>Réduire le temps d'exécution du JS </li>
+              <li>Mauvais traitement sur les images</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow">
+            <h3 class="text-lg font-bold mb-2">✅ Qualité</h3>
+            <ul class="list-disc list-inside text-sm">
+              <li>SEO optimisé</li>
+              <li>UI mobile fluide</li>
+              <li>Première page avec du contenu</li>
+              <li>Décalage cumulatif de la disposition</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+          4. Points forts et points faibles
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+            <h3 class="font-bold text-green-700 mb-2">✅ Points forts</h3>
+            <ul class="list-disc list-inside text-sm">
+              <li>Expérience utilisateur fluide</li>
+              <li>Design responsive de qualité</li>
+              <li>Accessibilité complète</li>
+              <li>Engagement pour la consommation circulaire</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+            <h3 class="font-bold text-red-700 mb-2">⚠️ Points faibles</h3>
+            <ul class="list-disc list-inside text-sm">
+              <li>Poids excessif des pages</li>
+              <li>Dépendance aux scripts tiers</li>
+              <li>runtime JS</li>
+              <li>Absence d'indicateur d'impact carbone</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+          5. Recommandations
+        </h2>
+        <ul class="list-disc list-inside leading-relaxed space-y-2">
+          <li>
+            🖼️ Optimiser les images avec les formats WebP/AVIF et du lazy
+            loading
+          </li>
+          <li>
+            🧹 Réduire les scripts JavaScript inutiles et les bibliothèques
+            tierces
+          </li>
+          <li>
+            ♿ Ajouter des attributs ARIA, gérer le focus clavier et améliorer
+            les contrastes
+          </li>
+          <li>
+            🌱 Afficher l’impact environnemental estimé par article et par mode
+            de livraison
+          </li>
+          <li>📊 Mettre en place un suivi EcoIndex hebdomadaire automatisé</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+          6. Conclusion
+        </h2>
+        <p class="leading-relaxed text-justify">
+          Vinted incarne une vision moderne et responsable de la consommation
+          textile. Si l'expérience utilisateur est globalement satisfaisante,
+          une amélioration notable de l’écoconception et de l’accessibilité est
+          nécessaire pour pleinement correspondre aux enjeux du numérique
+          durable. Grâce à quelques actions ciblées, Vinted pourrait devenir une
+          référence en matière de sobriété numérique dans l’univers des
+          plateformes collaboratives.
+        </p>
+      </section>
+
+      <!-- Résultats Visuels des Audits -->
+      <section>
+        <h2 class="text-2xl font-semibold text-indigo-700 mb-4">
+          7. Résultats visuels des audits
+        </h2>
+
+        <p class="text-gray-700 mb-8 text-lg">
+          ⚠️ Les captures EcoIndex et Lighthouse seront à insérer ici une fois
+          générées. Elles permettent d’illustrer l’état actuel de la performance
+          environnementale et de l’accessibilité du service Vinted.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- EcoIndex -->
+          <div class="bg-white shadow-xl rounded-2xl p-6 border border-gray-200">
+            <div class="flex items-center mb-4">
+              <span class="text-2xl mr-2">♻️</span>
+              <h3 class="text-xl font-semibold text-gray-800">EcoIndex</h3>
+            </div>
+            <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+              <img src="./image.png" alt="EcoIndex" class="max-w-full max-h-full object-contain rounded-md shadow-sm" />
+            </div>
+          </div>
+
+          <!-- Lighthouse -->
+          <div class="bg-white shadow-xl rounded-2xl p-6 border border-gray-200">
+            <div class="flex items-center mb-4">
+              <span class="text-2xl mr-2">💡</span>
+              <h3 class="text-xl font-semibold text-gray-800">Lighthouse</h3>
+            </div>
+            <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+              <img src="./image2.png" alt="Lighthouse" class="max-w-full max-h-full object-contain rounded-md shadow-sm" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white mt-10 p-6 border-t text-center text-sm text-gray-400">
+      © 2025 - Audit numérique réalisé à des fins pédagogiques. Données basées
+      sur une simulation de service réel.
+    </footer>
+  </body>
+</html>
