@@ -84,7 +84,7 @@
             <ul class="list-disc list-inside text-sm">
               <li>Score Lighthouse : 63%</li>
               <li>Réduire le travail du main thread</li>
-              <li>Réduire le temps d'exécution du JS </li>
+              <li>Réduire le temps d'exécution du JS</li>
               <li>Mauvais traitement sur les images</li>
             </ul>
           </div>
@@ -180,33 +180,111 @@
 
         <div class="grid md:grid-cols-2 gap-8">
           <!-- EcoIndex -->
-          <div class="bg-white shadow-xl rounded-2xl p-6 border border-gray-200">
+          <div
+            class="bg-white shadow-xl rounded-2xl p-6 border border-gray-200"
+          >
             <div class="flex items-center mb-4">
               <span class="text-2xl mr-2">♻️</span>
               <h3 class="text-xl font-semibold text-gray-800">EcoIndex</h3>
             </div>
-            <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-              <img src="./image.png" alt="EcoIndex" class="max-w-full max-h-full object-contain rounded-md shadow-sm" />
+            <div
+              class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center"
+            >
+              <img
+                src="./image.png"
+                alt="EcoIndex"
+                class="max-w-full max-h-full object-contain rounded-md shadow-sm"
+              />
             </div>
           </div>
 
           <!-- Lighthouse -->
-          <div class="bg-white shadow-xl rounded-2xl p-6 border border-gray-200">
-            <div class="flex items-center mb-4">
-              <span class="text-2xl mr-2">💡</span>
-              <h3 class="text-xl font-semibold text-gray-800">Lighthouse</h3>
-            </div>
-            <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-              <img src="./image2.png" alt="Lighthouse" class="max-w-full max-h-full object-contain rounded-md shadow-sm" />
-            </div>
+          <div
+            class="bg-white shadow-xl rounded-2xl p-6 border border-gray-200 max-w-4xl mx-auto"
+          >
+            <header class="flex items-center mb-6">
+              <span class="text-3xl mr-3">💡</span>
+              <h3 class="text-2xl font-semibold text-gray-800">Lighthouse</h3>
+            </header>
+
+            <section
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              <figure
+                class="bg-gray-100 rounded-lg shadow-lg flex items-center justify-center p-6 border border-gray-300 cursor-pointer"
+                onclick="openModal(this)"
+              >
+                <img
+                  src="./image2.jpg"
+                  alt="Lighthouse image 1"
+                  class="max-w-full max-h-64 object-contain rounded-md shadow-sm"
+                />
+              </figure>
+
+              <figure
+                class="bg-gray-100 rounded-lg shadow-lg flex items-center justify-center p-6 border border-gray-300 cursor-pointer"
+                onclick="openModal(this)"
+              >
+                <img
+                  src="./image3.jpg"
+                  alt="Lighthouse image 2"
+                  class="max-w-full max-h-64 object-contain rounded-md shadow-sm"
+                />
+              </figure>
+
+              <figure
+                class="bg-gray-100 rounded-lg shadow-lg flex items-center justify-center p-6 border border-gray-300 cursor-pointer"
+                onclick="openModal(this)"
+              >
+                <img
+                  src="./image4.jpg"
+                  alt="Lighthouse image 3"
+                  class="max-w-full max-h-64 object-contain rounded-md shadow-sm"
+                />
+              </figure>
+            </section>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="bg-white mt-10 p-6 border-t text-center text-sm text-gray-400">
+    <footer
+      class="bg-white mt-10 p-6 border-t text-center text-sm text-gray-400"
+    >
       © 2025 - Audit numérique réalisé à des fins pédagogiques. Données basées
       sur une simulation de service réel.
     </footer>
+
+    <!-- Modal -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50"
+      onclick="closeModal()"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Agrandissement de l'image"
+    >
+      <img
+        id="modal-img"
+        src=""
+        alt="Agrandissement"
+        class="max-w-4xl max-h-full rounded-lg shadow-lg"
+      />
+    </div>
+
+    <script>
+      function openModal(figure) {
+        const img = figure.querySelector('img');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        modalImg.src = img.src;
+        modal.classList.remove('hidden');
+      }
+
+      function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.classList.add('hidden');
+      }
+    </script>
   </body>
 </html>
