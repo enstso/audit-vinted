@@ -188,12 +188,13 @@
               <h3 class="text-xl font-semibold text-gray-800">EcoIndex</h3>
             </div>
             <div
-              class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center"
+              class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer"
             >
               <img
                 src="./image.png"
                 alt="EcoIndex"
                 class="max-w-full max-h-full object-contain rounded-md shadow-sm"
+                onclick="openModal(this)"
               />
             </div>
           </div>
@@ -212,7 +213,7 @@
             >
               <figure
                 class="bg-gray-100 rounded-lg shadow-lg flex items-center justify-center p-6 border border-gray-300 cursor-pointer"
-                onclick="openModal(this)"
+                onclick="openModal(this.querySelector('img'))"
               >
                 <img
                   src="./image2.jpg"
@@ -223,7 +224,7 @@
 
               <figure
                 class="bg-gray-100 rounded-lg shadow-lg flex items-center justify-center p-6 border border-gray-300 cursor-pointer"
-                onclick="openModal(this)"
+                onclick="openModal(this.querySelector('img'))"
               >
                 <img
                   src="./image3.jpg"
@@ -234,7 +235,7 @@
 
               <figure
                 class="bg-gray-100 rounded-lg shadow-lg flex items-center justify-center p-6 border border-gray-300 cursor-pointer"
-                onclick="openModal(this)"
+                onclick="openModal(this.querySelector('img'))"
               >
                 <img
                   src="./image4.jpg"
@@ -259,11 +260,19 @@
     <div
       id="modal"
       class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50"
-      onclick="closeModal()"
       role="dialog"
       aria-modal="true"
       aria-label="Agrandissement de l'image"
+      onclick="if(event.target.id === 'modal') closeModal()"
     >
+      <button
+        onclick="closeModal()"
+        class="absolute top-4 right-6 text-white text-4xl font-bold z-60"
+        aria-label="Fermer la modale"
+        style="z-index: 9999;"
+      >
+        &times;
+      </button>
       <img
         id="modal-img"
         src=""
@@ -273,17 +282,16 @@
     </div>
 
     <script>
-      function openModal(figure) {
-        const img = figure.querySelector('img');
-        const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modal-img');
-        modalImg.src = img.src;
-        modal.classList.remove('hidden');
+      function openModal(imgElement) {
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modal-img");
+        modalImg.src = imgElement.src;
+        modal.classList.remove("hidden");
       }
 
       function closeModal() {
-        const modal = document.getElementById('modal');
-        modal.classList.add('hidden');
+        const modal = document.getElementById("modal");
+        modal.classList.add("hidden");
       }
     </script>
   </body>
